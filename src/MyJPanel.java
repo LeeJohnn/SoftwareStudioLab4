@@ -5,18 +5,20 @@ import java.awt.event.MouseMotionListener;
 
 import javax.swing.*;
 
-
 public class MyJPanel extends JPanel implements MouseMotionListener{
 	
 	private Square square = new Square(100);
-	
+	private int centerX;
+	private int centerY;
 	public MyJPanel(){
 		addMouseMotionListener(this);
 	}
 	protected void paintComponent(Graphics g){
 		super.paintComponent(g);
 		// TODO Draw square and fill it with random color decided by method getRandomColor()
+		g.setColor(square.getRandomColor());
 		// You should use fillRect()
+	    g.fillRect(square.getCenterX(centerX), square.getCenterY(centerY), square.getShapeWidth(), square.getShapeHeight());
 		
 	}
 
